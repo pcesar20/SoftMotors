@@ -7,7 +7,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.sm.entities.Motos;
 import com.sm.entities.Usuarios;
+import com.sm.repositories.MotosRepository;
 import com.sm.repositories.UsuarioRepository;
 
 @Configuration
@@ -16,12 +18,18 @@ public class TestConfig implements CommandLineRunner{
 
 	@Autowired
 	UsuarioRepository usuariosRepository;
+	
+	@Autowired
+	MotosRepository motosRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 		Usuarios usuario1 = new Usuarios(null, "psex", "123", "123", "adm");
+		Motos moto1 = new Motos(null, "ABC123", "2019", "2020", "TITAN", "AZUL", "3000");
+		Motos motos2 = new Motos(null, "ABC123", "2019", "2020", "XT600", "AZUL", "23000");
 		
 		usuariosRepository.saveAll(Arrays.asList(usuario1));
+		motosRepository.saveAll(Arrays.asList(moto1, motos2));
 		
 	}
 }
