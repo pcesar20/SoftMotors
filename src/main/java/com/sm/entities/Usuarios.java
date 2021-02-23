@@ -2,6 +2,7 @@ package com.sm.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,9 +18,13 @@ public class Usuarios implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(nullable = false)
 	private String login;
+	@Column(nullable = false)
 	private String senha;
+	@Column(nullable = false)
 	private String conf_senha;
+	@Column(nullable = false)
 	private String funcao;
 	
 	public Usuarios() {

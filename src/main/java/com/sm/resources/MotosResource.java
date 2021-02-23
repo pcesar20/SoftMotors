@@ -27,7 +27,6 @@ public class MotosResource {
 	
 	@GetMapping
 	public ResponseEntity<List<Motos>> findAll() {
-//		User u = new User(1L, "Paulo", "pc@pcsoft.com","55554444", "12345");
 		List<Motos> list = service.findAll();
 		return ResponseEntity.ok(list);
 	}
