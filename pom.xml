@@ -11,7 +11,6 @@
 	<groupId>com.sm</groupId>
 	<artifactId>softmotors_api</artifactId>
 	<version>0.0.1</version>
-	<packaging>war</packaging>
 	<name>softmotors_api</name>
 	<description>Projeto SDS 1.0</description>
 	<properties>
@@ -85,10 +84,13 @@
 	</dependencies>
 
 	<build>
-		<plugins>
+			<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				 <configuration>
+        		<executable>true</executable>
+    			</configuration>
 				<executions>
 				<execution>
 				<goals>

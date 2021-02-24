@@ -1,6 +1,5 @@
 package com.sm;
 
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 //import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -10,7 +9,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @Configuration
 @ComponentScan
@@ -26,9 +25,8 @@ public class SoftmotorsApiApplication extends SpringBootServletInitializer {
 		return builder.sources(SoftmotorsApiApplication.class);
 	}
 	
-	@GetMapping
-    @ResponseBody
-    public String currentUserName(Authentication authentication) {
+	@GetMapping(value="/hello")
+    public String hello() {
           return "Hello, ";
     }
 
